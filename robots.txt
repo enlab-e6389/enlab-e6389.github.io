@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hn931203-rgb.github.io/enlab-e6389-site/sitemap.xml
+Sitemap: https://enlab-e6389.github.io/sitemap.xml
