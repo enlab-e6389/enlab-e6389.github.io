@@ -106,6 +106,55 @@
     margin-bottom:10px;
   }
   .prof-card p{font-size:14px;color:var(--sub);}
+  .prof-card .quote{
+    font-size:14px;
+    font-weight:700;
+    color:var(--navy2);
+    margin-bottom:10px;
+    display:block;
+  }
+  .prof-card ul{margin:10px 0 0;padding-left:18px;font-size:13px;color:var(--sub);}
+  .prof-card ul li{margin-bottom:4px;}
+
+  .compare-table{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    overflow:hidden;
+    font-size:13px;
+  }
+  .compare-table th, .compare-table td{
+    padding:14px 12px;
+    text-align:left;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  .compare-table th{
+    background:#f1f3f8;
+    font-size:12px;
+    color:var(--sub);
+    width:22%;
+  }
+  .compare-table td b{color:var(--navy2);}
+  .compare-table tr:last-child th, .compare-table tr:last-child td{border-bottom:none;}
+  .table-scroll{overflow-x:auto;}
+
+  .sub-prof-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;}
+  .sub-prof-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:18px;
+  }
+  .sub-prof-card h4{font-size:15px;font-weight:800;margin-bottom:4px;}
+  .sub-prof-card .quote{font-size:13px;color:var(--navy2);font-weight:700;display:block;margin-bottom:6px;}
+  .sub-prof-card p{font-size:13px;color:var(--sub);}
+
+  @media (max-width:560px){
+    .sub-prof-grid{grid-template-columns:1fr;}
+  }
 
   .course-list{
     display:flex;
@@ -175,6 +224,65 @@
   }
   footer p{margin-bottom:6px;}
 
+  .curri{
+    counter-reset:step;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .curri-step{
+    display:flex;
+    gap:16px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:18px 20px;
+    align-items:flex-start;
+  }
+  .curri-step .n{
+    counter-increment:step;
+    flex-shrink:0;
+    width:32px;height:32px;
+    border-radius:50%;
+    background:var(--navy2);
+    color:#fff;
+    font-weight:800;
+    font-size:14px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .curri-step .n::before{content:counter(step);}
+  .curri-step h4{font-size:15px;font-weight:800;margin-bottom:4px;}
+  .curri-step p{font-size:13px;color:var(--sub);}
+
+  .exam-box{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:22px;
+    font-size:14px;
+    color:var(--sub);
+  }
+  .exam-box a{color:var(--navy2);font-weight:700;text-decoration:none;}
+
+  .faq{border-top:1px solid var(--line);}
+  .faq details{
+    border-bottom:1px solid var(--line);
+    padding:16px 0;
+  }
+  .faq summary{
+    cursor:pointer;
+    font-weight:700;
+    font-size:15px;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:"+";font-size:20px;color:var(--sub);font-weight:400;}
+  .faq details[open] summary::after{content:"–";}
+  .faq p{font-size:14px;color:var(--sub);margin-top:10px;line-height:1.7;}
+
   @media (max-width:560px){
     header.hero h1{font-size:24px;}
     .prof-grid{grid-template-columns:1fr;}
@@ -203,18 +311,58 @@
 
 <section>
   <div class="wrap">
-    <h2><span class="num">01.</span> 담당 교수진</h2>
-    <p class="lead">엔지니어랩 전기기사·소방설비기사 강의를 이끄는 대표 강사진입니다.</p>
+    <h2><span class="num">01.</span> 김상훈 · 조경필 교수 소개</h2>
+    <p class="lead">전기기사 필기 전 과목을 대표하는 두 메인 강사입니다.</p>
     <div class="prof-grid">
       <div class="prof-card">
-        <span class="tag">전기기사 · 공기업</span>
-        <h3>김상훈 교수</h3>
-        <p>전기기사 실기 및 공기업 전기직 채용 대비 강의를 담당하며, 유튜브 라이브 특강("꼭나옴", 공기업 취업 시리즈)을 정기적으로 진행합니다.</p>
+        <span class="tag">전기기사 필기 전 과목 · 실기(설계·관리/견적·시공)</span>
+        <h3>김상훈 교수 (일렉킴)</h3>
+        <span class="quote">"자격증부터 공기업 합격까지 레전드 1타, 일렉킴!"</span>
+        <ul>
+          <li>전기공학 박사</li>
+          <li>前 J사·E사 전기기사 대표강사</li>
+          <li>前 인하공업전문대학 교수</li>
+          <li>現 대한전기학회 이사</li>
+          <li>전기기사·공기업·공무원 수험서 집필</li>
+          <li>공기업 전기직 채용 라이브 시리즈 및 실기 파이널 특강 진행</li>
+        </ul>
       </div>
       <div class="prof-card">
-        <span class="tag">전기기사</span>
-        <h3>조경필 교수</h3>
-        <p>엔지니어랩 전기기사 커리큘럼의 메인 강사로, 필기·실기 전 과정을 담당합니다.</p>
+        <span class="tag">전기기사 필기 전 과목 · 실기(전기설비설계 및 관리)</span>
+        <h3>조경필 교수 (갓경필)</h3>
+        <span class="quote">"비전공자도 단번에 이해하는 전기의 神, 갓경필!"</span>
+        <ul>
+          <li>前 조선대학교 이공대학 겸임교수</li>
+          <li>前 동강대학교 전기전자 외래교수</li>
+          <li>유튜브 구독자 3.5만 명 · 누적 조회수 1,200만 뷰</li>
+          <li>서울시 채용 중심 취업 지원 프로그램 교육 강사</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="table-scroll" style="margin-top:22px;">
+      <table class="compare-table">
+        <tr><th>구분</th><td><b>김상훈 교수</b></td><td><b>조경필 교수</b></td></tr>
+        <tr><th>필기 담당</th><td>전 과목</td><td>전 과목</td></tr>
+        <tr><th>실기 담당</th><td>설계 및 관리 / 견적 및 시공</td><td>전기설비설계 및 관리</td></tr>
+        <tr><th>주요 경력</th><td>전기공학 박사, 대한전기학회 이사, 前 인하공업전문대학 교수</td><td>前 조선대·동강대 겸임/외래교수</td></tr>
+        <tr><th>강점 콘텐츠</th><td>공기업 전기직 채용 라이브, 실기 파이널 단답 특강</td><td>비전공자 대상 개념 설명, 유튜브 강의 콘텐츠</td></tr>
+      </table>
+    </div>
+    <p style="font-size:12px;color:var(--sub);margin-top:10px;">※ 이 외 이슬찬·김성민·이동근·김태영 교수 등 과목별 전문 강사진이 함께 강의를 구성합니다. 상세 프로필은 <a href="https://www.engineerlab.co.kr/ee/professor/index.php?cate=A" target="_blank" rel="noopener" style="color:var(--navy2);">공식 교수소개 페이지</a>에서 확인하실 수 있습니다.</p>
+
+    <h2 style="margin-top:44px;"><span class="num">01-1.</span> 소방설비기사(전기) 교수진</h2>
+    <p class="lead">소방전기·소방기계 과목별 전문 강사가 배정되어 있습니다.</p>
+    <div class="sub-prof-grid">
+      <div class="sub-prof-card">
+        <span class="quote">"심승아가 찍어주는 소방의 모든 것, 심 P!CK"</span>
+        <h4>심승아 교수 · 소방전기</h4>
+        <p>서울시립대학교 방재공학전공 석사. 한방유비스(주) 소방 실무 경력, N사·M사 소방설비기사 대표강사, 서울시 채용 중심 취업 지원 프로그램 교육 강사.</p>
+      </div>
+      <div class="sub-prof-card">
+        <span class="quote">"단숨에 60점 도달, 초단기 합격 메이커!"</span>
+        <h4>이종오 교수 · 소방기계</h4>
+        <p>가천대학교 소방방재학 석사. 소방 현장 실무경력 10년 이상, 세명대·경민대 외래교수, 소방공무원 강의 경력 보유.</p>
       </div>
     </div>
   </div>
@@ -231,13 +379,52 @@
       <a href="https://www.engineerlab.co.kr/ee/online/online_lecture.php?item_id=CE" target="_blank" rel="noopener">전기기능사</a>
       <a href="https://www.engineerlab.co.kr/ee/online/online_lecture.php?item_id=EF" target="_blank" rel="noopener">소방설비기사</a>
       <a href="https://www.engineerlab.co.kr/ee/online/online_lecture.php?item_id=PC" target="_blank" rel="noopener">공기업</a>
+      <a href="https://www.engineerlab.co.kr/ee/online/book_lecture.php?type=ALL&item=FT" target="_blank" rel="noopener">지게차운전기능사</a>
+      <a href="https://www.engineerlab.co.kr/ee/online/book_lecture.php?type=ALL&item=IH" target="_blank" rel="noopener">위험물산업기사</a>
+      <a href="https://www.engineerlab.co.kr/ee/online/book_lecture.php?type=ALL&item=IS" target="_blank" rel="noopener">산업안전기사</a>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2><span class="num">03.</span> 전기기사 커리큘럼</h2>
+    <p class="lead">필기부터 실기까지 단계별로 이어지는 학습 흐름입니다.</p>
+    <div class="curri">
+      <div class="curri-step">
+        <span class="n"></span>
+        <div><h4>기초 이론</h4><p>전기자기학·전력공학·전기기기·회로이론·전기설비기술기준 5과목 기본 개념 정리</p></div>
+      </div>
+      <div class="curri-step">
+        <span class="n"></span>
+        <div><h4>과목별 심화</h4><p>과목별 핵심 유형 문제풀이로 실전 응용력 강화</p></div>
+      </div>
+      <div class="curri-step">
+        <span class="n"></span>
+        <div><h4>기출문제 분석</h4><p>연도별 기출문제 풀이 및 출제 경향 분석</p></div>
+      </div>
+      <div class="curri-step">
+        <span class="n"></span>
+        <div><h4>실기 대비 + CBT 모의고사</h4><p>필기 합격 후 실기(작업형·필답형) 대비 강의와 엔랩 CBT 모의고사로 실전 감각 점검</p></div>
+      </div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2><span class="num">03.</span> 교재 안내</h2>
+    <h2><span class="num">04.</span> 시험일정 · 접수 안내</h2>
+    <p class="lead">전기기사·전기산업기사·전기기능사·소방설비기사는 한국산업인력공단(Q-Net)에서 연 1~4회차로 시행됩니다.</p>
+    <div class="exam-box">
+      정확한 회차별 원서접수 기간·시험일은 매년 변경되므로, <a href="https://www.engineerlab.co.kr/ee/lab/info_1.php" target="_blank" rel="noopener">엔지니어랩 수험정보 페이지</a> 또는
+      <a href="https://www.q-net.or.kr" target="_blank" rel="noopener">한국산업인력공단 Q-Net</a>에서 최신 공고를 확인하시는 것을 권장합니다.
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2><span class="num">05.</span> 교재 안내</h2>
     <p class="lead">과정별 교재 구성입니다. 최신 목차·가격은 공식 교재 페이지에서 확인하세요.</p>
     <div class="book-note" style="margin-bottom:14px;">
       <b style="color:var(--text);">전기기사</b> — 필기 / 실기 / 모의고사<br>
@@ -248,6 +435,31 @@
     <div class="book-note">
       정확한 최신 목차와 가격은 <a href="https://www.engineerlab.co.kr/ee/online/book_lecture.php?type=ALL&item=EE" target="_blank" rel="noopener">전기기사 교재 페이지</a> ·
       <a href="https://www.engineerlab.co.kr/ee/online/book_lecture.php?type=ALL&item=EF" target="_blank" rel="noopener">소방설비기사 교재 페이지</a>에서 확인하실 수 있습니다.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><span class="num">06.</span> 자주 묻는 질문</h2>
+    <p class="lead">파트너 코드 적용과 관련해 자주 문의되는 내용입니다.</p>
+    <div class="faq">
+      <details>
+        <summary>파트너 코드는 언제, 어떻게 입력하나요?</summary>
+        <p>회원가입 화면의 코드 입력란에 <b>e6389</b>를 입력하시면 됩니다. 본 페이지의 파트너 링크로 접속해서 가입하시면 코드가 자동으로 입력된 상태로 진행됩니다.</p>
+      </details>
+      <details>
+        <summary>이미 가입한 회원도 코드를 적용할 수 있나요?</summary>
+        <p>파트너 코드는 신규 회원가입 시 적용되는 혜택입니다. 이미 가입된 계정의 소급 적용 여부는 엔지니어랩 고객센터(1577-2166) 또는 1:1 문의 게시판에서 확인해주세요.</p>
+      </details>
+      <details>
+        <summary>필기와 실기 강의를 따로 결제해야 하나요?</summary>
+        <p>과정별로 필기·실기가 개별 상품으로 구성되어 있거나 통합 패키지로 제공되는 경우도 있습니다. 정확한 구성은 각 강좌 상세 페이지에서 확인하실 수 있습니다.</p>
+      </details>
+      <details>
+        <summary>환불 규정은 어떻게 되나요?</summary>
+        <p>수강료 환불 기준은 엔지니어랩 학원 공지사항에 안내되어 있으니, 결제 전 반드시 공식 공지사항을 확인하시길 권장합니다.</p>
+      </details>
     </div>
   </div>
 </section>
