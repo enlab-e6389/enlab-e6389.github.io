@@ -13,6 +13,7 @@
     --navy:#15243f;
     --navy2:#1c2d52;
     --yellow:#ffe15a;
+    --neon:#39ff8a;
     --text:#222;
     --sub:#5b6472;
     --bg:#f7f8fb;
@@ -148,6 +149,7 @@
   }
   .team-card b{font-size:13px;display:block;}
   .team-card span{font-size:11px;color:var(--sub);}
+  .team-card .extra{display:block;font-size:10px;color:var(--navy2);margin-top:3px;}
   @media (max-width:560px){
     .team-grid{grid-template-columns:repeat(2,1fr);}
   }
@@ -240,17 +242,46 @@
   }
   .discount-box h2{color:#fff;}
   .code{
+    position:relative;
     display:inline-block;
+    overflow:hidden;
     font-family:monospace;
-    font-size:22px;
-    font-weight:800;
-    letter-spacing:2px;
-    background:rgba(255,255,255,.1);
-    border:1px dashed var(--yellow);
-    color:var(--yellow);
-    padding:10px 24px;
+    font-size:28px;
+    font-weight:900;
+    letter-spacing:3px;
+    background:#0a1626;
+    border:2px solid var(--neon);
+    color:var(--neon);
+    padding:12px 30px;
     border-radius:12px;
     margin:18px 0;
+    text-shadow:0 0 6px var(--neon), 0 0 16px rgba(57,255,138,.6);
+    animation:neonPulse 1.8s ease-in-out infinite;
+  }
+  .code::after{
+    content:"";
+    position:absolute;
+    top:0; left:-60%;
+    width:40%; height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,.75), transparent);
+    transform:skewX(-20deg);
+    animation:codeShine 2.6s ease-in-out infinite;
+  }
+  @keyframes neonPulse{
+    0%,100%{box-shadow:0 0 8px var(--neon), 0 0 18px rgba(57,255,138,.5);}
+    50%{box-shadow:0 0 18px var(--neon), 0 0 40px rgba(57,255,138,.85);}
+  }
+  @keyframes codeShine{
+    0%{left:-60%;}
+    45%{left:130%;}
+    100%{left:130%;}
+  }
+  .neon-badge{
+    display:inline-block;
+    font-weight:800;
+    color:var(--neon) !important;
+    text-shadow:0 0 6px var(--neon), 0 0 14px rgba(57,255,138,.6);
+    animation:neonPulse 1.8s ease-in-out infinite;
   }
   .steps{
     text-align:left;
@@ -400,7 +431,7 @@
     </div>
     <div style="font-size:11px;color:#8a91a5;margin-top:-16px;margin-bottom:22px;">*2023년 3회 전기기사 실기 학원 수강생 최종합격 기준</div>
     <a class="cta-btn" href="https://www.engineerlab.co.kr/ee/promotion/2025/partner/index.php?partnerID=e6389" target="_blank" rel="noopener">파트너 코드로 혜택 확인하기</a>
-    <div class="cta-sub">파트너 코드 e6389 자동 적용 링크</div>
+    <div class="cta-sub">파트너 코드 <span class="neon-badge">e6389</span> 자동 적용 링크</div>
   </div>
 </header>
 
@@ -493,6 +524,7 @@
       <div class="team-card">
         <img class="team-photo" src="img/prof-yyw.png" alt="양용우 교수" loading="lazy">
         <b>양용우</b><span>전기 실무</span>
+        <span class="extra">유튜브 '이디라TV' 구독자 15만 · 前 대전/제주 정부청사 시설관리</span>
       </div>
       <div class="team-card">
         <img class="team-photo" src="img/prof-ysh.png" alt="윤성훈 교수" loading="lazy">
@@ -614,6 +646,12 @@
         <p>3회차를 준비하면서 이해적 모의고사 3회독을 끝냈고, 15개년 기출을 풀면서 교수님의 풀이 과정과 핵심 내용을 꾸준히 상기하며 문제를 푸니 자신감이 생겼습니다. 그 결과 3회차 합격이라는 영광을 누리게 되었습니다. 합격의 기준, 엔지니어랩!!!</p>
         <div class="who">합격자 이O호</div>
       </div>
+      <div class="review-card">
+        <span class="cat">전기 실무</span>
+        <h4>양용우 교수님 실무 강의, 현장 초심자에게 큰 도움</h4>
+        <p>전기기사 실무 과정 고급과정까지 다 오픈했다고 하여 강의 듣고 있는 1인입니다. 저처럼 현장 경험이 없고 처음 취업 준비를 하는 사람에게는 매우 도움이 되는 강의입니다. 관리자로 어떤 일을 하는지, 현장에서 어떤 일들이 벌어지는지 아주 기초 단계부터 세세하게 알려주셔서 정말 큰 힘이 되고 있습니다. 양용우 교수님 감사합니다.</p>
+        <div class="who">수강생 후기</div>
+      </div>
     </div>
     <p class="review-note">*2023년 3회 전기기사 실기 학원 수강생 최종합격 기준</p>
   </div>
@@ -675,7 +713,7 @@
 <section class="alt">
   <div class="wrap">
     <div class="discount-box">
-      <h2>파트너 할인코드 e6389</h2>
+      <h2>파트너 할인코드 <span class="neon-badge">e6389</span></h2>
       <p style="color:#dfe3ec;font-size:14px;">회원가입 시 아래 코드를 입력하면 파트너 혜택이 적용됩니다.</p>
       <div class="code">e6389</div>
       <ol class="steps">
