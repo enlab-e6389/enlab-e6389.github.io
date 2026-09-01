@@ -30,11 +30,30 @@
   .wrap{max-width:880px;margin:0 auto;padding:0 20px;}
 
   header.hero{
+    position:relative;
+    overflow:hidden;
     background:linear-gradient(180deg, var(--navy2) 0%, var(--navy) 100%);
     color:#fff;
     padding:56px 0 64px;
     text-align:center;
   }
+  .hero-watermark{
+    position:absolute;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%) rotate(-8deg);
+    font-family:monospace;
+    font-weight:900;
+    font-size:22vw;
+    line-height:1;
+    letter-spacing:0.02em;
+    color:var(--neon);
+    opacity:.14;
+    text-shadow:0 0 40px var(--neon);
+    white-space:nowrap;
+    pointer-events:none;
+    z-index:0;
+  }
+  header.hero .wrap{position:relative;z-index:1;}
   .badge{
     display:inline-block;
     background:rgba(255,255,255,.1);
@@ -83,7 +102,7 @@
     border-radius:999px;
     text-decoration:none;
   }
-  .cta-sub{margin-top:10px;font-size:13px;color:#a9b1c2;}
+  .cta-sub{margin-top:14px;font-size:16px;color:#a9b1c2;}
 
   section{padding:52px 0;}
   section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
@@ -281,10 +300,10 @@
   }
   .neon-badge{
     display:inline-block;
-    font-size:1.35em;
+    font-size:1.8em;
     font-weight:900;
     color:var(--neon) !important;
-    text-shadow:0 0 8px var(--neon), 0 0 18px rgba(57,255,138,.7);
+    text-shadow:0 0 10px var(--neon), 0 0 22px rgba(57,255,138,.8);
     animation:neonPulse 1.8s ease-in-out infinite;
   }
   .steps{
@@ -425,6 +444,7 @@
 <body>
 
 <header class="hero">
+  <div class="hero-watermark">E6389</div>
   <div class="wrap">
     <span class="badge">엔지니어랩 공식 파트너</span>
     <h1>전기기사 · 소방설비기사 인강<br>김상훈 · 조경필 교수님과 함께</h1>
