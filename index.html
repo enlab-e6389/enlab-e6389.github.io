@@ -129,7 +129,7 @@
     margin-bottom:12px;
     background:#f2f4f8;
   }
-  .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px;}
+  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px;}
   .team-card{
     background:var(--card);
     border:1px solid var(--line);
@@ -346,6 +346,37 @@
   .review-card p{font-size:13px;color:#c9cfdc;line-height:1.7;margin-bottom:14px;}
   .review-card .who{font-size:12px;color:#9aa1ad;text-align:right;}
   .review-note{font-size:12px;color:var(--sub);margin-top:14px;text-align:center;}
+
+  .notice-list{
+    max-width:720px;
+    margin:20px auto 0;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+  }
+  .notice-list a{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    padding:13px 18px;
+    text-decoration:none;
+    color:var(--text);
+    font-size:13px;
+    border-bottom:1px solid var(--line);
+  }
+  .notice-list a:last-child{border-bottom:none;}
+  .notice-list .tag{
+    flex-shrink:0;
+    font-size:11px;
+    color:var(--navy2);
+    background:#eef1f8;
+    padding:2px 8px;
+    border-radius:999px;
+    align-self:flex-start;
+  }
+  .notice-list .ttl{flex:1;}
+  .notice-list .date{flex-shrink:0;color:var(--sub);font-size:12px;}
   @media (max-width:760px){
     .review-grid{grid-template-columns:1fr;}
   }
@@ -380,6 +411,24 @@
 <p style="max-width:720px;margin:24px auto 0;padding:0 20px;text-align:center;font-size:14px;color:var(--sub);line-height:1.7;">
   <b style="color:var(--text);">엔지니어랩 할인받는 방법</b>이 궁금하신가요? <b style="color:var(--text);">전기기사 김상훈 교수 인강</b>부터 <b style="color:var(--text);">조경필 강사 강의</b>·<b style="color:var(--text);">전기기사 조경필 교재</b>, 소방설비기사 심승아·이종오 교수 강의까지 — 파트너 <b style="color:var(--text);">엔지니어랩 할인쿠폰</b> 코드 e6389로 한 번에 확인하세요.
 </p>
+
+<div class="notice-list">
+  <a href="https://www.engineerlab.co.kr/ee/promotion/2025/partner/index.php?partnerID=e6389" target="_blank" rel="noopener">
+    <span class="tag">유튜브</span><span class="ttl">김상훈 꼭나옴&공취업 시리즈 LIVE 9월 1주차 일정</span><span class="date">26.08.31</span>
+  </a>
+  <a href="https://www.engineerlab.co.kr/ee/promotion/2025/partner/index.php?partnerID=e6389" target="_blank" rel="noopener">
+    <span class="tag">이벤트</span><span class="ttl">26+27 빠른시작+빠른합격 이벤트 (9/30 마감, 선착순)</span><span class="date">26.08.26</span>
+  </a>
+  <a href="https://www.engineerlab.co.kr/ee/promotion/2025/partner/index.php?partnerID=e6389" target="_blank" rel="noopener">
+    <span class="tag">실기복원</span><span class="ttl">소방설비기사(전기) 26년 1-2회 실기 CBT 모의고사 응시 및 해설강의 안내</span><span class="date">26.05.12</span>
+  </a>
+  <a href="https://www.engineerlab.co.kr/ee/promotion/2025/partner/index.php?partnerID=e6389" target="_blank" rel="noopener">
+    <span class="tag">수험정보</span><span class="ttl">26년도 정기 기능사 제4회 필기시험 원서접수 등 주요사항 안내</span><span class="date">26.08.20</span>
+  </a>
+  <a href="https://www.engineerlab.co.kr/ee/promotion/2025/partner/index.php?partnerID=e6389" target="_blank" rel="noopener">
+    <span class="tag">특강</span><span class="ttl">26년 3회 김상훈 실기 파이널+단답 특강 개강 안내 (조기마감주의)</span><span class="date">26.08.14</span>
+  </a>
+</div>
 
 <section>
   <div class="wrap">
@@ -440,6 +489,14 @@
       <div class="team-card">
         <img class="team-photo" src="img/prof-kty.png" alt="김태영 교수" loading="lazy">
         <b>김태영</b><span>전기자기학/기초수학</span>
+      </div>
+      <div class="team-card">
+        <img class="team-photo" src="img/prof-yyw.png" alt="양용우 교수" loading="lazy">
+        <b>양용우</b><span>전기 실무</span>
+      </div>
+      <div class="team-card">
+        <img class="team-photo" src="img/prof-ysh.png" alt="윤성훈 교수" loading="lazy">
+        <b>윤성훈</b><span>공기업 자소서/면접</span>
       </div>
     </div>
     <p style="font-size:12px;color:var(--sub);margin-top:14px;">상세 프로필은 <a href="https://www.engineerlab.co.kr/ee/promotion/2025/partner/index.php?partnerID=e6389" target="_blank" rel="noopener" style="color:var(--navy2);">파트너 코드로 교수소개 보러가기</a>에서 확인하실 수 있습니다.</p>
@@ -598,6 +655,18 @@
       <details>
         <summary>전기기사 취득 후 진로는 어떻게 되나요?</summary>
         <p>전기공사업체, 발전·전력 관련 공기업(한국전력공사 등 전기직), 빌딩·플랜트 전기설비 유지보수, 전기안전관리자 선임 등 다양한 진로로 이어집니다. 공기업 전기직 채용에서는 전기기사 자격이 필수 또는 우대 조건으로 요구되는 경우가 많습니다.</p>
+      </details>
+      <details>
+        <summary>비전공자인데 전기기사 맞춤 강좌 추천해주세요</summary>
+        <p>비전공자·초시생은 기초 이론부터 순서대로 밟아가는 커리큘럼이 중요합니다. 조경필 교수의 "비전공자도 단번에 이해하는" 강의나, 무료특강으로 먼저 강의 스타일을 확인해보고 본인에게 맞는 강사를 고르는 것을 추천드립니다.</p>
+      </details>
+      <details>
+        <summary>전기기사 인강을 무료로 들어볼 수 있나요?</summary>
+        <p>엔지니어랩은 유튜브 및 홈페이지 무료특강 게시판을 통해 일부 강의를 무료로 제공합니다. 결제 전에 무료특강으로 강사 스타일과 강의 퀄리티를 먼저 확인해보실 수 있습니다.</p>
+      </details>
+      <details>
+        <summary>공기업 전기직 취업 맞춤 강좌도 있나요?</summary>
+        <p>네. 김상훈 교수의 공기업 전기직 채용 라이브 시리즈와, 윤성훈 교수의 공기업 자소서·면접 강좌가 별도로 운영됩니다. 자격증 취득 이후 공기업 취업까지 이어지는 커리큘럼입니다.</p>
       </details>
     </div>
   </div>
