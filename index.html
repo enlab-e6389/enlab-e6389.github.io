@@ -113,20 +113,42 @@
     width:100%;
     height:220px;
     object-fit:cover;
-    object-position:center 6%;
+    object-position:center center;
     border-radius:12px;
     margin-bottom:14px;
-    background:#dfe3ec;
+    background:#f2f4f8;
   }
   .sub-prof-photo{
     display:block;
     width:100%;
     height:170px;
     object-fit:cover;
-    object-position:center 6%;
+    object-position:center center;
     border-radius:10px;
     margin-bottom:12px;
-    background:#dfe3ec;
+    background:#f2f4f8;
+  }
+  .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px;}
+  .team-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:12px;
+    text-align:center;
+  }
+  .team-photo{
+    width:100%;
+    height:110px;
+    object-fit:cover;
+    object-position:center center;
+    border-radius:8px;
+    margin-bottom:8px;
+    background:#f2f4f8;
+  }
+  .team-card b{font-size:13px;display:block;}
+  .team-card span{font-size:11px;color:var(--sub);}
+  @media (max-width:560px){
+    .team-grid{grid-template-columns:repeat(2,1fr);}
   }
   .prof-card .quote{
     font-size:14px;
@@ -305,6 +327,28 @@
   .faq details[open] summary::after{content:"–";}
   .faq p{font-size:14px;color:var(--sub);margin-top:10px;line-height:1.7;}
 
+  .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .review-card{
+    background:linear-gradient(180deg, var(--navy2) 0%, var(--navy) 100%);
+    color:#fff;
+    border-radius:16px;
+    padding:22px;
+  }
+  .review-card .cat{
+    display:inline-block;
+    font-size:12px;
+    font-weight:700;
+    color:var(--yellow);
+    margin-bottom:6px;
+  }
+  .review-card h4{font-size:16px;font-weight:800;margin-bottom:12px;line-height:1.4;}
+  .review-card p{font-size:13px;color:#c9cfdc;line-height:1.7;margin-bottom:14px;}
+  .review-card .who{font-size:12px;color:#9aa1ad;text-align:right;}
+  .review-note{font-size:12px;color:var(--sub);margin-top:14px;text-align:center;}
+  @media (max-width:760px){
+    .review-grid{grid-template-columns:1fr;}
+  }
+
   @media (max-width:560px){
     header.hero h1{font-size:24px;}
     .prof-grid{grid-template-columns:1fr;}
@@ -319,9 +363,10 @@
     <h1>전기기사 · 소방설비기사 인강<br>김상훈 · 조경필 교수님과 함께</h1>
     <p>필기·실기 전 과정, CBT 모의고사까지 — 엔지니어랩 커리큘럼 안내</p>
     <div class="stats">
-      <div class="stat"><b>92%</b><span>자격증 합격률</span></div>
+      <div class="stat"><b>92%</b><span>자격증 합격률*</span></div>
       <div class="stat"><b>75%</b><span>공기업 채용 합격률</span></div>
     </div>
+    <div style="font-size:11px;color:#8a91a5;margin-top:-16px;margin-bottom:22px;">*2023년 3회 전기기사 실기 학원 수강생 최종합격 기준</div>
     <a class="cta-btn" href="https://www.engineerlab.co.kr/ee/promotion/2025/partner/index.php?partnerID=e6389" target="_blank" rel="noopener">파트너 코드로 혜택 확인하기</a>
     <div class="cta-sub">파트너 코드 e6389 자동 적용 링크</div>
   </div>
@@ -464,9 +509,37 @@
   </div>
 </section>
 
+<section class="alt">
+  <div class="wrap">
+    <h2><span class="num">06.</span> 합격자 리얼 후기</h2>
+    <p class="lead">합격률 92%*를 함께 만든 엔지니어랩 합격자들의 리얼 합격후기입니다.</p>
+    <div class="review-grid">
+      <div class="review-card">
+        <span class="cat">전기공사기사</span>
+        <h4>전기기사, 전기공사기사, 공기업 모두 합격</h4>
+        <p>비전공자인 저도 큰 어려움없이 강의를 잘 따라갈 수 있었고 복습하면서 이해적 모의고사로 실전 감각을 키웠고 결국 전기기사, 전기공사기사 그리고 공기업 전기직 최종 합격이라는 결과를 이룰 수 있었습니다.</p>
+        <div class="who">합격자 권O훈</div>
+      </div>
+      <div class="review-card">
+        <span class="cat">전기(산업)기사</span>
+        <h4>전기기사, 전기산업기사 동시 합격!!</h4>
+        <p>엔지니어랩 통해서 전기기사 83점, 전기산업기사 70점으로 고득점 합격했습니다. 기본서를 기준으로 공부하면서 기출문제를 풀었고 특히 마지막 총정리 덕분에 고득점을 얻을 수 있었습니다. 마무리해주는 특강 강력히 추천합니다!</p>
+        <div class="who">합격자 이O동</div>
+      </div>
+      <div class="review-card">
+        <span class="cat">전기(산업)기사</span>
+        <h4>전기기사, 전기산업기사 둘 다 합격했습니다.</h4>
+        <p>3회차를 준비하면서 이해적 모의고사 3회독을 끝냈고, 15개년 기출을 풀면서 교수님의 풀이 과정과 핵심 내용을 꾸준히 상기하며 문제를 푸니 자신감이 생겼습니다. 그 결과 3회차 합격이라는 영광을 누리게 되었습니다. 합격의 기준, 엔지니어랩!!!</p>
+        <div class="who">합격자 이O호</div>
+      </div>
+    </div>
+    <p class="review-note">*2023년 3회 전기기사 실기 학원 수강생 최종합격 기준</p>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
-    <h2><span class="num">06.</span> 자주 묻는 질문</h2>
+    <h2><span class="num">07.</span> 자주 묻는 질문</h2>
     <p class="lead">파트너 코드 적용과 관련해 자주 문의되는 내용입니다.</p>
     <div class="faq">
       <details>
